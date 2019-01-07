@@ -1,0 +1,52 @@
+#+TITLE: CITeX test
+* What is this?
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+** test section
+
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+
+*** test subsection
+
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+
+* Methods
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+hoge hoge hoge hoge hogehoge
+
+
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
+fuga fuga fuga fuga fugafuga
