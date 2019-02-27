@@ -1,4 +1,6 @@
-#+TITLE: CITeX test
+#+TITLE: CI\TeX
+This file is tangled by Emacs (org-latex-export-to-latex).
+Do not edit by hand!
 * What is this?
 hoge hoge hoge hoge hogehoge
 hoge hoge hoge hoge hogehoge
