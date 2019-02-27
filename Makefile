@@ -1,5 +1,5 @@
 # Usually, only these lines need changing
-TEXFILE= 4buuild/manuscript
+TEXFILE= src/manuscript
 RDIR= .
 FIGDIR= ./figs
 
