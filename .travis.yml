@@ -1,6 +1,15 @@
+os:
+  - osx
 sudo: required
 dist: trusty
-before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
+install:
+  - curl -L -O http://mirrors.concertpass.com/tex-archive/systems/mac/mactex/BasicTeX.pkg
+  - sudo installer -pkg BasicTeX.pkg -target /
+  - rm BasicTeX.pkg
+  - export PATH=$PATH:/usr/texbin
+  - sudo tlmgr update --self --all
+  - sudo tlmgr install latexmk collection-luatex collection-langjapanese collection-fontsrecommended filehook type1cm mdframed needspace
 script:
-- pdflatex -interaction=nonstopmode -halt-on-error *.tex
+  - platex src/manuscript.tex
+  - dvipdfmx src/manuscript
+  - lualatex src/manuscript.tex
