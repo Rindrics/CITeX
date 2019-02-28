@@ -1,15 +1,18 @@
-os:
-  - osx
 sudo: required
 dist: trusty
-install:
-  - curl -L -O http://mirrors.concertpass.com/tex-archive/systems/mac/mactex/BasicTeX.pkg
-  - sudo installer -pkg BasicTeX.pkg -target /
-  - rm BasicTeX.pkg
-  - export PATH=$PATH:/usr/texbin
-  - sudo tlmgr update --self --all
-  - sudo tlmgr install latexmk collection-luatex collection-langjapanese collection-fontsrecommended filehook type1cm mdframed needspace
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
-  - platex src/manuscript.tex
-  - dvipdfmx src/manuscript
-  - lualatex src/manuscript.tex
+- mkdir _build
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/your_file_1.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/your_file_2.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: [YOUR KEY]
+  file:
+  - _build/your_file_1.pdf
+  - _build/your_file_2.pdf
+  skip_cleanup: true
+  on:
+    tags: true
