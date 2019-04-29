@@ -1,18 +1,11 @@
-sudo: required
-dist: trusty
-before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
-script:
-- mkdir _build
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/your_file_1.tex
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/your_file_2.tex
-deploy:
-  provider: releases
-  api_key:
-    secure: [YOUR KEY]
-  file:
-  - _build/your_file_1.pdf
-  - _build/your_file_2.pdf
-  skip_cleanup: true
-  on:
-    tags: true
+services:
+  - docker:dind
+
+latex_job:
+  image: eisoku9618/kuroiwa_dockefiles_for_latexmk
+  script:
+    - (for dir in *; do [ -d "${dir}" ] && echo "$dir start" && (cd $dir && latexmk manuscnipt.tex && mv .tmp/manuscnipt.pdf ../${dir}.pdf); done)
+  artifacts:
+    expire_in: 2 days
+    paths:
+      - ./*.pdf
