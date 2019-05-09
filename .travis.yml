@@ -20,3 +20,4 @@ deploy:
   target_branch:
     - master
     - ci_cd
+
