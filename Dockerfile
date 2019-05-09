@@ -1,23 +1,37 @@
-FROM ubuntu:18.04
+# Copyright (c) 2016 Kaito Udagawa
+# Copyright (c) 2016-2018 3846masa
+# Released under the MIT license
+# https://opensource.org/licenses/MIT
 
-ENV DEBIAN_FRONTEND noninteractive
+FROM frolvlad/alpine-glibc
 
-RUN apt update && apt install -y --no-install-recommends \
-# for (u)platex
-texlive-lang-japanese \
-# for CTAN packages
-texlive-plain-generic texlive-latex-base texlive-latex-extra \
-# for latexmk
-latexmk \
-# for noto font: Bold and Regular
-fonts-noto-cjk \
-# for noto font: Black, DemiLight, Light, Medium, Thin and so on
-fonts-noto-cjk-extra \
-# for extra fonts
-texlive-fonts-recommended \
-# for Awesome CV: https://github.com/posquit0/Awesome-CV
-texlive-fonts-extra \
-texlive-xetex fonts-font-awesome fonts-roboto fontconfig \
-&& rm -rf /var/lib/apt/lists/*
+MAINTAINER 3846masa
 
-CMD ["/bin/bash"]
+ENV PATH /usr/local/texlive/2018/bin/x86_64-linuxmusl:$PATH
+
+RUN apk --no-cache add perl wget xz tar fontconfig-dev freetype-dev && \
+    mkdir /tmp/install-tl-unx && \
+    wget -qO - ftp://tug.org/historic/systems/texlive/2018/install-tl-unx.tar.gz | \
+    tar -xz -C /tmp/install-tl-unx --strip-components=1 && \
+    printf "%s\n" \
+      "selected_scheme scheme-basic" \
+      "option_doc 0" \
+      "option_src 0" \
+      > /tmp/install-tl-unx/texlive.profile && \
+    /tmp/install-tl-unx/install-tl \
+      --profile=/tmp/install-tl-unx/texlive.profile && \
+    tlmgr install \
+      collection-basic collection-latex \
+      collection-latexrecommended collection-latexextra \
+      collection-fontsrecommended collection-langjapanese \
+      latexmk xetex && \
+    rm -fr /tmp/install-tl-unx && \
+    apk --no-cache del xz tar
+
+RUN apk --no-cache add bash
+
+WORKDIR /workdir
+
+VOLUME ["/workdir"]
+
+CMD ["bash"]
