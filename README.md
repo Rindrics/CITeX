@@ -20,7 +20,8 @@ https://github.com/kikirinrin/CITeX/projects を参照
 
 #### Windows users
 ``` sh
-docker-compose run --rm latexmk manuscript.tex && manuscript.pdf
+docker-compose run --rm latexmk manuscript.tex
+manuscript.pdf
 ```
 #### OSX & Linux users
 ``` sh
