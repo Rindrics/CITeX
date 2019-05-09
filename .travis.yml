@@ -1,3 +1,4 @@
+---
 language: generic
 services: docker
 
@@ -6,13 +7,16 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
   api_key:
-    secure: "aACSHNdNM3X4W7BL5lv8gWOXCHIa+I9P4n116OTE/lK9F8gnneGW7uDYxTKSNpa+2kX5eXCl8Z2dlw3uWra4LbSaHpUXoGy/Q1paj/x2hav3q53dBLGGW2PfXx3dyEghJk4AOF63ksSAgrp/RcmyWX6NHATkBjvfQtlN6no3Aqs="
+    secure: "aACSHNdNM3X4W7BL5lv8gWOXCHIa+I9P4n116OTE/lK9F8gnneGW7uDYxTKSNpa+2kX
+    5eXCl8Z2dlw3uWra4LbSaHpUXoGy/Q1paj/x2hav3q53dBLGGW2PfXx3dyEghJk4AOF63ksSAgrp
+    /RcmyWX6NHATkBjvfQtlN6no3Aqs="
   file:
-    - *.pdf
+    - "*.pdf"
   keep_history: true
+  skip_cleanup: true
   on:
     branch: master
-  target_branch: master ci_cd
-
+  target_branch:
+    - master
+    - ci_cd
