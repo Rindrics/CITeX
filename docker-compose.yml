@@ -1,0 +1,8 @@
+version: '2'
+services:
+  latexmk:
+    image: paperist/alpine-texlive-ja
+    volumes:
+      - './:/workdir'
+    entrypoint: latexmk
+    
