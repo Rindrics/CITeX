@@ -14,5 +14,7 @@ deploy:
   keep_history: true
   on:
     branch: master
-  target_branch: master ci_cd
+  target_branch:
+    - master
+    - ci_cd
 
