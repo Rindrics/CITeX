@@ -21,7 +21,8 @@ https://github.com/kikirinrin/CITeX/projects を参照
 #### Windows users
 ``` sh
 docker-compose run --rm latexmk manuscript.tex
-manuscript.pdf
+
+# How to open file in Windows env???
 ```
 #### OSX & Linux users
 ``` sh
