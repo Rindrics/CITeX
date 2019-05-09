@@ -9,23 +9,24 @@
 - 見出しがある
 
 ## 計画
-
 https://github.com/kikirinrin/CITeX/projects を参照
 
-## 使い方
-### Docker のインストール
+## 環境構築
+### Docker 環境の構築
+貢献してくださる方は，[Wiki](https://github.com/kikirinrin/CITeX/wiki) を見ながらチャレンジして下さい．
 
-### 実行
-`./manuscript.txt` を編集
+Wiki の説明に足りないところがあると思いますので，適宜編集してくださると大変助かります．
+### pdf ビューアの導入
+編集 & 確認を可能にするために，自動リロード機能のある pdf ビューアをご準備下さい（Windows なら Sumatra PDF？）
+Windows 10 で Acrobat pdf を開いたままコンパイルを試みたところ，エラーになりました．
 
-#### Windows users
-``` sh
-docker-compose run --rm latexmk manuscript.tex
+## ワークフロー
+1. `./manuscript.txt` を編集する
+1. `docker-compose run --rm latexmk manuscript.tex` を実行
+1. PDF を開いて確認（unix 環境なら `docker-compose run --rm latexmk manuscript.tex && open manuscript.pdf` 一発でOKです）
+1. 必要に応じて `./manuscript.txt` を再編集する（以下繰り返し）
 
-# How to open file in Windows env???
-```
-#### OSX & Linux users
-``` sh
-docker-compose run --rm latexmk manuscript.tex && open manuscript.pdf
-
-```
+### Tips
+`*.dvi` や `*.aux` などの中間ファイルが邪魔になった場合には
+`git clean -f`
+で削除できます．
