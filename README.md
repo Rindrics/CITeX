@@ -9,17 +9,21 @@
 - 見出しがある
 
 ## 計画
-まずは小規模なもの，例えば漁海況予報業務のようなものから試す．
 
-### 導入の順序
+https://github.com/kikirinrin/CITeX/projects を参照
 
 ## 使い方
 ### Docker のインストール
 
 ### 実行
+`./manuscript.txt` を編集
+
+#### Windows users
 ``` sh
-cd tmp/
-docker run -d --rm -it -w=/root -v $PWD:/root eisoku9618/kuroiwa_dockefiles_for_latexmk /bin/bash -c "latexmk -pvc manuscript.tex"
-open .tmp/manuscript.pdf
+docker-compose run --rm latexmk manuscript.tex && manuscript.pdf
 ```
-Then write & update `tmp/manuscript.txt`
+#### OSX & Linux users
+``` sh
+docker-compose run --rm latexmk manuscript.tex && open manuscript.pdf
+
+```
