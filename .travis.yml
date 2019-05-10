@@ -7,7 +7,7 @@ script:
 
 deploy:
   provider: pages
-  github-token: d74326051ec8228a9a9bfbac44f1003928b7fa2d
+  github-token: 
   file:
     - "*.pdf"
   keep_history: true
