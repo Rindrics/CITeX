@@ -1,4 +1,5 @@
 # CITeX
+![Travis status](https://travis-ci.org/kikirinrin/CITeX.svg?branch=master)
 
 業務 & 研究現場におけるドキュメント生成を効率化するため
 - CI（継続的インテグレーション）
