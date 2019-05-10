@@ -7,10 +7,7 @@ script:
 
 deploy:
   provider: pages
-  api_key:
-    secure: "aACSHNdNM3X4W7BL5lv8gWOXCHIa+I9P4n116OTE/lK9F8gnneGW7uDYxTKSNpa+2kX
-    5eXCl8Z2dlw3uWra4LbSaHpUXoGy/Q1paj/x2hav3q53dBLGGW2PfXx3dyEghJk4AOF63ksSAgrp
-    /RcmyWX6NHATkBjvfQtlN6no3Aqs="
+  github-token: d74326051ec8228a9a9bfbac44f1003928b7fa2d
   file:
     - "*.pdf"
   keep_history: true
