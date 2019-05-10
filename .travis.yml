@@ -13,7 +13,7 @@ script:
 
 after_success:
   - mv ./*.pdf ./docs/
-  - git add ./docs/*.pdf
+  - git add -f ./docs/*.pdf
   - git commit -m "[CD] Auto-commit by Travis CI"
   - git clean -f
 
