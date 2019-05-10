@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1557458167 "manuscript.dvi" "manuscript.pdf" "manuscript" 1557458167
-  "manuscript.dvi" 1557458167 15936 795722f0ff9482561a98ea8079e9dc89 "latex"
+["dvipdf"] 1557460456 "manuscript.dvi" "manuscript.pdf" "manuscript" 1557460456
+  "manuscript.dvi" 1557460456 15936 8860b0cce71e161d207f5e216d5e9b3a "latex"
   (generated)
   "manuscript.pdf"
-["latex"] 1557458167 "manuscript.tex" "manuscript.dvi" "manuscript" 1557458167
+["latex"] 1557460456 "manuscript.tex" "manuscript.dvi" "manuscript" 1557460456
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1480098698 856 7404843a5f798859944d7973a47821d5 ""
@@ -26,9 +26,9 @@
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1544742277 35176 ce7fee66be1fb01dfc6b702a7dbfa0ea ""
   "/usr/local/texlive/2018/texmf-var/web2c/eptex/platex.fmt" 1556545752 891253 3f610f652b2baf751ae328e3806dd4e2 ""
   "/usr/local/texlive/2018/texmf.cnf" 1556545007 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "manuscript.aux" 1557458167 1521 652fe7bdfee37a2f6ab3180b35ce01c8 ""
-  "manuscript.tex" 1557458133 10557 ec81dc9290729c668482e6613c536a40 ""
+  "manuscript.aux" 1557460456 1521 652fe7bdfee37a2f6ab3180b35ce01c8 ""
+  "manuscript.tex" 1557460421 10557 ec81dc9290729c668482e6613c536a40 ""
   (generated)
-  "manuscript.log"
-  "manuscript.aux"
   "manuscript.dvi"
+  "manuscript.aux"
+  "manuscript.log"
