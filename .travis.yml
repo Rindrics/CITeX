@@ -12,7 +12,8 @@ script:
   - docker-compose run --rm latexmk manuscript.tex
 
 after_success:
-  - mv ./manuscript.pdf ./docs/
+  - mv ./*.pdf ./docs/
+  - git commit -am ./docs/*.pdf "[CD] Auto-commit by TravisCI"
   - git clean -f
 
 deploy:
