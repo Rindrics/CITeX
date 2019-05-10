@@ -1,11 +1,23 @@
-services:
-  - docker:dind
+---
+language: generic
+services: docker
 
-latex_job:
-  image: eisoku9618/kuroiwa_dockefiles_for_latexmk
-  script:
-    - (for dir in *; do [ -d "${dir}" ] && echo "$dir start" && (cd $dir && latexmk manuscnipt.tex && mv .tmp/manuscnipt.pdf ../${dir}.pdf); done)
-  artifacts:
-    expire_in: 2 days
-    paths:
-      - ./*.pdf
+script:
+  - docker-compose run --rm latexmk manuscript.tex
+
+deploy:
+  provider: pages
+  api_key:
+    secure: "aACSHNdNM3X4W7BL5lv8gWOXCHIa+I9P4n116OTE/lK9F8gnneGW7uDYxTKSNpa+2kX
+    5eXCl8Z2dlw3uWra4LbSaHpUXoGy/Q1paj/x2hav3q53dBLGGW2PfXx3dyEghJk4AOF63ksSAgrp
+    /RcmyWX6NHATkBjvfQtlN6no3Aqs="
+  file:
+    - "*.pdf"
+  keep_history: true
+  skip_cleanup: true
+  on:
+    branch: master
+  target_branch:
+    - master
+    - ci_cd
+
