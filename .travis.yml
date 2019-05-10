@@ -1,17 +1,16 @@
----
 language: generic
 services: docker
-
 script:
-  - docker-compose run --rm latexmk manuscript.tex
-
+- docker-compose run --rm latexmk manuscript.tex
 deploy:
   provider: pages
   github-token: 
   file:
-    - "*.pdf"
+  - "*.pdf"
   keep_history: true
   skip_cleanup: true
   on:
     branch: master
-
+env:
+  global:
+    secure: L2xmAXNbEqOCT5JKj0wPEztlN5+4BdEg19moXXmeoDLc+E0cJrDAZ4TAc6Mmz0mzY4dVbEzdWww3ns9DFQ9KuEJdSHL4ixn9+TN+mZaGAPQmJnOQUOXxe3LvL8dhsR5jojnGEWAnGCzvT+CLpSy7/EXb92v+gRZpDB+vrhSw+vnOv8P6XG+1MKkIICGvm5YKOphzrPqGvOP8QujEqM6Vq2OVLRSdIIX96xgqf0gG1G3dfQugyDeCQ6w/pE9lpXshSsTYhNW+Ui6Qpln6iwzZrlf7TafRBOPiCXSyrOOlk9akwRc7lcBC5fsFz1tNDp2c13sSz+gnavi27ttH/DbhabcsWmFfoO8VTj6iqVhHRn2UPG1Dm9p/QVqv/Ab2ofkSPFRxJ71lPZLryixZnQF4NjoTQsn3JhcfUcEdU6djbHCCizL7ip9x/bfcn9C+0OrzYvQRy2FnvmiVBCd6EN0PafP8vzeJ9Ddlnag3ch+tKIq0qqNVEk7Icig9ijc2mFQcLrKaom8cN/BfVNU5jUzCSHyA9asq/SwZS3y2F+6pTpbdAbstcZ31YeNufBC8dBqvGCUIW6x6TYO7KG75LdDhXAk6GbTNRb+F3pybnERz78JUxcAWWxKTMarn1zVMcr9LSGLGJ+LVMRDOX97f2ahAYDs6DSwkTeu+IQXD/9o949I=
