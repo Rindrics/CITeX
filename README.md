@@ -29,8 +29,8 @@ Windows 10 で Acrobat pdf を開いたままコンパイルを試みたとこ�
 
 ## ワークフロー
 1. `./manuscript.txt` を編集する
-1. `docker-compose run --rm latexmk manuscript.tex` を実行
-1. PDF を開いて確認（unix 環境なら `docker-compose run --rm latexmk manuscript.tex && open manuscript.pdf` 一発でOKです）
+1. `docker-compose run --rm latexmk -pvc manuscript.tex` を実行
+1. PDF を開いて確認（unix 環境なら `docker-compose run --rm latexmk -pvc manuscript.tex && open manuscript.pdf` 一発でOKです）
 1. 必要に応じて `./manuscript.txt` を再編集する（以下繰り返し）
 
 ### Tips
