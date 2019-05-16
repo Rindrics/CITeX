@@ -3,6 +3,6 @@ services:
   latexmk:
     image: paperist/alpine-texlive-ja
     volumes:
-      - './:/workdir'
+      - './docs/:/workdir'
     entrypoint: latexmk
     
