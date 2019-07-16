@@ -1,0 +1,87 @@
+\documentclass[dvipdfmx]{beamer}
+\usepackage{pxjahyper} % cf. http://d.hatena.ne.jp/zrbabbler/20120528/1338221936
+%\usetheme{Warsaw}
+%\usecolortheme{seagull}
+\usetheme[progressbar=head]{metropolis}
+\usefonttheme{professionalfonts}
+
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+
+%\usecolortheme{seahorse}
+
+\begin{document}
+\title{Beamer のテスト}
+\author{Akira Hayashi}
+\date{\today}
+
+
+
+\frame{\titlepage}
+
+\frame{\frametitle{目次}\tableofcontents}
+
+\section{セクション 1}
+\frame{\frametitle{セクションのタイトル}
+セクション内の文章。
+}
+\subsection{サブセクション 1-1}
+\frame{\frametitle{サブセクションのタイトル}
+サブセクション内の文章。
+}
+
+\section{セクション2}
+\subsection{番号なしリストの使い方}
+\frame{\frametitle{いわし類}
+\begin{itemize}
+\item マイワシ
+\item カタクチイワシ
+\item ウルメイワシ
+\end{itemize}}
+
+\subsection{ポーズの使い方}
+\frame{\frametitle{資源評価の手順}
+\begin{enumerate}
+\item 月別漁獲量の集計\pause
+\item 月別体長組成の整理\pause
+\item VPA\pause
+\item etc
+\end{enumerate}}
+
+\subsection{表の使い方}
+\frame{\frametitle{予報の検証}
+\begin{tabular}{ccc}
+\hline
+\textbf{海域} & \textbf{予報} & \textbf{結果} \\
+\hline
+北薩・薩南 & 前年を上回る & 前年を下回った  \\
+日向灘 & 前年並み & 前年を下回った \\
+豊後水道西側 & 前年並み〜上回る & 前年を下回った \\
+\hline
+\end{tabular}
+}
+
+\section{セクション3}
+\subsection{ブロックの使い方}
+
+\frame{\frametitle{さば類}
+  \begin{block}{マサバ}
+    \textit{Scomber japonicus} うまい．
+  \end{block}\pause
+
+  \begin{exampleblock}{ゴマサバ}
+    \textit{Scomber australasicus} うまい．
+  \end{exampleblock}\pause
+
+  \begin{alertblock}{タイセイヨウサバ}
+    \textit{Scomber scombrus} うまい．
+  \end{alertblock}\pause
+
+  つまりみんなうまい
+}
+
+\begin{frame}[standout]
+Thank you!
+\end{frame}
+
+\end{document}
