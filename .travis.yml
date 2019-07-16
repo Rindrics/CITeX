@@ -11,19 +11,3 @@ before_install:
 script:
   - docker-compose run --rm latexmk manuscript.tex
 
-after_success:
-  - git checkout master
-  - mv ./*.pdf ./docs/
-  - git add -f ./docs/*.pdf
-  - git commit -m "[CD] Auto-commit by Travis CI"
-  - git clean -f
-
-deploy:
-  provider: pages
-  github-token: "$GITHUB_TOKEN"
-  file:
-    - "./docs/*.pdf"
-  keep_history: true
-  skip_cleanup: true
-  on:
-    branch: master
