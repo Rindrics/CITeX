@@ -1,5 +1,6 @@
 # Copyright (c) 2016 Kaito Udagawa
 # Copyright (c) 2016-2018 3846masa
+# Copyright (c) 2019- kikirinrin
 # Released under the MIT license
 # https://opensource.org/licenses/MIT
 
@@ -30,6 +31,7 @@ RUN apk --no-cache add perl wget xz tar fontconfig-dev freetype-dev && \
 
 RUN apk --no-cache add bash
 
+RUN mkdir /workdir
 WORKDIR /workdir
 
 VOLUME ["/workdir"]
