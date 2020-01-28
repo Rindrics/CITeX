@@ -5,10 +5,14 @@ services: docker
 script:
   - docker-compose run --rm latexmk manuscript.tex
 
+before_deploy:
+  - export RELEASE_TITLE=$(date '+%Y%m%d%H%M%S')-$TRAVIS_JOB_NUMBER
+
 deploy:
   provider: releases
+  name: $RELEASE_TITLE
   api_key: "$GITHUB_TOKEN"
-  file: "*.pdf"
+  file: "manuscript.pdf"
   skip_cleanup: true
   on:
     branch:
